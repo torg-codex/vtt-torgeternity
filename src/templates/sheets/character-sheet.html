@@ -1,0 +1,28 @@
+<form class="{{cssClass}}" autocomplete="off">
+    <header class="shee-header">
+        <h1> 
+            <input name="name" type="text" value="{{actor.name}}" placeholder="Name"/> </h1>
+        </h1>
+    </header>
+    <div>
+    Axioms
+    <table>
+        <tr>
+            {{#each data.axioms}}
+            <th>
+                {{@key}}
+            </th>
+            {{/each}}
+        </tr>
+        <tr>
+            {{#each data.axioms}}
+            <td>
+                <input name="data.axioms.{{key}}.value" type="text" value="{{this.value}}" data-dtype="Number"/>
+            </td>
+            {{/each}}
+        </tr>
+    </table>
+    </div>
+    Attributes
+    Skills
+</form>

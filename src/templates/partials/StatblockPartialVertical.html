@@ -1,0 +1,13 @@
+{{#each stat}}
+<tr>
+    <td>
+        {{@key}}
+    </td>
+    <td>
+        <input name="data.{{../statName}}.{{@key}}.adds" type="text" value="{{this.adds}}" data-dtype="Number"/>
+    </td>
+    <td>
+        <input name="data.{{../statName}}.{{@key}}.value" type="text" value="{{this.value}}" data-dtype="Number"/>
+    </td>
+</tr>
+{{/each}}

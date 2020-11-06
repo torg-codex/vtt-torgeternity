@@ -1,0 +1,17 @@
+<table>
+    {{log statName}}
+    <tr>
+        {{#each stat}}
+        <th>
+            {{@key}}
+        </th>
+        {{/each}}
+    </tr>
+    <tr>
+        {{#each stat}}
+        <td>
+            <input name="data.{{../statName}}.{{@key}}.value" type="text" value="{{this.value}}" data-dtype="Number"/>
+        </td>
+        {{/each}}
+    </tr>
+</table>

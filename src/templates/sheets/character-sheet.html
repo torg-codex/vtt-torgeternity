@@ -5,24 +5,58 @@
         </h1>
     </header>
     <div>
-    Axioms
+        Axioms
+        {{> systems/torgeternity/templates/partials/StatblockPartial.html stat=data.axioms statName="axioms"}}
+    </div>
+    <div>
+        Attributes
+        {{> systems/torgeternity/templates/partials/StatblockPartial.html stat=data.attributes statName="attributes"}}
+    </div>
+    <img src="{{actor.img}}" data-edit="img" title="{{item.name}}" height="128" width="128">
     <table>
         <tr>
-            {{#each data.axioms}}
-            <th>
-                {{@key}}
-            </th>
-            {{/each}}
+            <th></th>
+            <th>Current</th>
+            <th>Max</th>
         </tr>
         <tr>
-            {{#each data.axioms}}
-            <td>
-                <input name="data.axioms.{{key}}.value" type="text" value="{{this.value}}" data-dtype="Number"/>
-            </td>
-            {{/each}}
+            <td>Wounds</td>
+            <td><input name="data.wounds.value" type="text" value="{{data.wounds.value}}" data-dtype="Number"/></td>
+            <td><input name="data.wounds.max" type="text" value="{{data.wounds.max}}" data-dtype="Number"/></td>
         </tr>
+        <tr>
+            <td>Shock</td>
+            <td><input name="data.shock.value" type="text" value="{{data.shock.value}}" data-dtype="Number"/></td>
+            <td><input name="data.shock.max" type="text" value="{{data.shock.max}}" data-dtype="Number"/></td>
+        </tr>
+
     </table>
-    </div>
-    Attributes
-    Skills
+    <table>
+        <tr>
+            <th>
+            Combat Skills    
+            </th>
+        </tr>
+        {{> systems/torgeternity/templates/partials/StatblockPartialVertical.html stat=data.combatSkills statName="combatSkills"}}
+
+        <tr>
+            <th>
+            Interaction Skills    
+            </th>
+        </tr>
+        {{> systems/torgeternity/templates/partials/StatblockPartialVertical.html stat=data.interactionSkills statName="interactionSkills"}}
+
+        <tr>
+            <th>
+            Other Skills    
+            </th>
+        </tr>
+        {{> systems/torgeternity/templates/partials/StatblockPartialVertical.html stat=data.otherSkills statName="otherSkills"}}
+        <tr>
+            <th>
+            Defense Skills    
+            </th>
+        </tr>
+        {{> systems/torgeternity/templates/partials/StatblockPartialVertical.html stat=data.defenseSkills statName="defenseSkills"}}
+    </table>
 </form>

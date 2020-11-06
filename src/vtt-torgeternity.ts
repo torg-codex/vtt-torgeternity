@@ -51,3 +51,35 @@ Hooks.once('ready', function() {
 });
 
 // Add any additional hooks if necessary
+
+/**
+ * Activate certain behaviors on Canvas Initialization hook (thanks for MooMan for this snippet)
+ */
+Hooks.on('canvasInit', async () => {
+	/**
+	 * Double every other diagonal movement
+	 */
+	// @ts-ignore
+	SquareGrid.prototype.measureDistances = function measureDistances(segments, options) {
+		//if ( !options.gridSpaces ) return BaseGrid.prototype.measureDistances.call(this, segments, options);
+  
+		// Track the total number of diagonals
+		const d = canvas.dimensions;
+	
+		// Iterate over measured segments
+		return segments.map(s => {
+			const r = s.ray;
+
+			// Determine the total distance traveled
+			const nx = Math.abs(Math.ceil(r.dx / d.size));
+			const ny = Math.abs(Math.ceil(r.dy / d.size));
+
+			// Determine the number of straight and diagonal moves
+			const nd = Math.min(nx, ny);
+			const ns = Math.abs(ny - nx);
+
+			return (ns + nd*1.5) * canvas.dimensions.distance;
+		});
+	};
+});
+  

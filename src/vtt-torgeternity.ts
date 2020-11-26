@@ -14,6 +14,7 @@
 import { registerSettings } from './module/settings';
 import { preloadTemplates } from './module/preloadTemplates';
 import TorgEternityCharacterSheet from './module/sheets/TorgEternityCharacterSheet'
+import { BonusDie, TorgDie, TorgDieUntrained } from './module/dice';
 
 /* ------------------------------------ */
 /* Initialize system					*/
@@ -32,7 +33,31 @@ Hooks.once('init', async function() {
 	// Register custom sheets (if any)
 
     Actors.unregisterSheet("core", ActorSheet);
-    Actors.registerSheet("torgeternity", TorgEternityCharacterSheet, {makeDefault: true});
+	Actors.registerSheet("torgeternity", TorgEternityCharacterSheet, {makeDefault: true});
+	
+	// add torg dice
+	CONFIG.Dice.types.push(BonusDie);
+	CONFIG.Dice.terms[BonusDie.DENOMINATION] = BonusDie;
+	CONFIG.Dice.types.push(TorgDie);
+	CONFIG.Dice.terms[TorgDie.DENOMINATION] = TorgDie;
+	CONFIG.Dice.types.push(TorgDieUntrained);
+	CONFIG.Dice.terms[TorgDieUntrained.DENOMINATION] = TorgDieUntrained;
+	/*
+	Dice: {
+		types: [Die, FateDie],
+		rollModes: Object.entries(CONST.DICE_ROLL_MODES).reduce((obj, e) => {
+		  let [k, v] = e;
+		  obj[v] = `CHAT.Roll${k.titleCase()}`;
+		  return obj;
+		}, {}),
+		rolls: [Roll],
+		terms: {
+		  "c": Coin,
+		  "d": Die,
+		  "f": FateDie
+		},
+		randomUniform: MersenneTwister.random
+	  },*/
 });
 
 /* ------------------------------------ */

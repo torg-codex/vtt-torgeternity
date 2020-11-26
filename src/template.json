@@ -59,202 +59,201 @@
                   "airVehicles": {
                       "basedOn": "dexterity",
                       "adds": 0,
-                      "value": 0
+                      "type": "other"
                   },
                   "alteration": {
                       "basedOn": "mind",
                       "adds": 0,
-                      "value": 0
+                      "type": "other"
                   },
                   "apportation": {
                       "basedOn": "spirit",
                       "adds": 0,
-                      "value": 0
+                      "type": "other"
                   },
                   "beastRiding": {
                       "basedOn": "dexterity",
                       "adds": 0,
-                      "value": 0
+                      "type": "other"
                   },
                   "computers": {
                       "basedOn": "mind",
                       "adds": 0,
-                      "value": 0
+                      "type": "other"
                   },
                   "conjuration": {
                       "basedOn": "spirit",
                       "adds": 0,
-                      "value": 0
+                      "type": "other"
                   },
                   "divination": {
                       "basedOn": "mind",
                       "adds": 0,
-                      "value": 0
+                      "type": "other"
                   },
                   "dodge": {
                       "basedOn": "dexterity",
                       "adds": 0,
-                      "value": 0
+                      "type": "combat"
                   },
                   "energyWeapons": {
                       "basedOn": "dexterity",
                       "adds": 0,
-                      "value": 0
+                      "type": "combat"
                   },
                   "evidenceAnalysis": {
                       "basedOn": "mind",
                       "adds": 0,
-                      "value": 0
+                      "type": "other"
                   },
                   "faith": {
                       "basedOn": "spirit",
                       "adds": 0,
-                      "value": 0
+                      "type": "other"
                   },
                   "find": {
                       "basedOn": "mind",
                       "adds": 0,
-                      "value": 0
+                      "type": "other"
                   },
                   "fireCombat": {
                       "basedOn": "dexterity",
                       "adds": 0,
-                      "value": 0
+                      "type": "combat"
                   },
                   "firstAid": {
                       "basedOn": "mind",
                       "adds": 0,
-                      "value": 0
+                      "type": "other"
                   },
                   "heavyWeapons": {
                       "basedOn": "dexterity",
                       "adds": 0,
-                      "value": 0
+                      "type": "combat"
                   },
                   "intimidation": {
                       "basedOn": "spirit",
                       "adds": 0,
-                      "value": 0
+                      "type": "interaction"
                   },
                   "kinesis": {
                       "basedOn": "spirit",
                       "adds": 0,
-                      "value": 0
+                      "type": "other"
                   },
                   "landVehicles": {
                       "basedOn": "dexterity",
                       "adds": 0,
-                      "value": 0
+                      "type": "other"
                   },
                   "language": {
                       "basedOn": "mind",
                       "adds": 0,
-                      "value": 0
+                      "type": "other"
                   },
                   "lockpicking": {
                       "basedOn": "dexterity",
-                      "adds": 0,
-                      "value": 0
+                      "adds": 0
                   },
                   "maneuver": {
                       "basedOn": "dexterity",
                       "adds": 0,
-                      "value": 0
+                      "type": "interaction"
                   },
                   "medicine": {
                       "basedOn": "mind",
                       "adds": 0,
-                      "value": 0
+                      "type": "other"
                   },
                   "meleeWeapons": {
                       "basedOn": "dexterity",
                       "adds": 0,
-                      "value": 0
+                      "type": "combat"
                   },
                   "missileWeapons": {
                       "basedOn": "dexterity",
                       "adds": 0,
-                      "value": 0
+                      "type": "combat"
                   },
                   "persuasion": {
                       "basedOn": "charisma",
                       "adds": 0,
-                      "value": 0
+                      "type": "other"
                   },
                   "precognition": {
                       "basedOn": "mind",
                       "adds": 0,
-                      "value": 0
+                      "type": "other"
                   },
                   "profession": {
                       "basedOn": "mind",
                       "adds": 0,
-                      "value": 0
+                      "type": "other"
                   },
                   "reality": {
                       "basedOn": "spirit",
                       "adds": 0,
-                      "value": 0
+                      "type": "other"
                   },
                   "scholar": {
                       "basedOn": "mind",
                       "adds": 0,
-                      "value": 0
+                      "type": "other"
                   },
                   "science": {
                       "basedOn": "mind",
                       "adds": 0,
-                      "value": 0
+                      "type": "other"
                   },
                   "stealth": {
                       "basedOn": "dexterity",
                       "adds": 0,
-                      "value": 0
+                      "type": "other"
                   },
                   "streetwise": {
                       "basedOn": "charisma",
                       "adds": 0,
-                      "value": 0
+                      "type": "other"
                   },
                   "survival": {
                       "basedOn": "mind",
                       "adds": 0,
-                      "value": 0
+                      "type": "other"
                   },
                   "taunt": {
                       "basedOn": "charisma",
                       "adds": 0,
-                      "value": 0
+                      "type": "interaction"
                   },
                   "telepathy": {
                       "basedOn": "charisma",
                       "adds": 0,
-                      "value": 0
+                      "type": "other"
                   },
                   "tracking": {
                       "basedOn": "mind",
                       "adds": 0,
-                      "value": 0
+                      "type": "other"
                   },
                   "trick": {
                       "basedOn": "mind",
                       "adds": 0,
-                      "value": 0
+                      "type": "interaction"
                   },
                   "unarmedCombat": {
                       "basedOn": "dexterity",
                       "adds": 0,
-                      "value": 0
+                      "type": "combat"
                   },
                   "waterVehicles": {
                       "basedOn": "dexterity",
                       "adds": 0,
-                      "value": 0
+                      "type": "other"
                   },
                   "willpower": {
                       "basedOn": "spirit",
                       "adds": 0,
-                      "value": 0
+                      "type": "other"
                   }
               },
               "shock": {

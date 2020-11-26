@@ -1,13 +1,17 @@
-{{#each stat}}
+{{#each stat}}{{#if (eq this.type ../type)}}
 <tr>
+    <td><button onclick="RollTableDirec">R</button></td>
     <td>
         {{@key}}
     </td>
     <td>
-        <input name="data.{{../statName}}.{{@key}}.adds" type="text" value="{{this.adds}}" data-dtype="Number"/>
+        {{this.attribute}} +
     </td>
     <td>
-        <input name="data.{{../statName}}.{{@key}}.value" type="text" value="{{this.value}}" data-dtype="Number"/>
+        <input name="data.skills.{{@key}}.adds" type="text" value="{{this.adds}}" data-dtype="Number"/>
+    </td>
+    <td>
+        <strong>= {{this.value}}</strong>
     </td>
 </tr>
-{{/each}}
+{{/if}}{{/each}}

@@ -16,7 +16,7 @@
     "vtt-torgeternity.js"
   ],
   "styles": [
-    "vtt-torgeternity.css"
+    "styles/style.css"
   ],
   "packs": [],
   "languages": [],

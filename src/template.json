@@ -265,6 +265,11 @@
                   "min": 0,
                   "value": 5,
                   "max": 5
+              },
+              "possibilities": {
+                  "min": 0,
+                  "value": 3,
+                  "max": 3
               }
           }
       },

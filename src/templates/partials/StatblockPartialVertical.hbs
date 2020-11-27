@@ -1,6 +1,6 @@
 {{#each stat}}{{#if (eq this.type ../type)}}
 <tr>
-    <td><button onclick="RollTableDirec">R</button></td>
+    <td><a class="roll" data-rollTarget="skills.{{@key}}"><img src="icons/svg/d20.svg" class="iconButton"></a></td>
     <td>
         {{@key}}
     </td>

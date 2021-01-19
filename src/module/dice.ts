@@ -64,7 +64,7 @@ export class TorgDieUntrained extends Die {
 function torgTable(roll:number) {
     if(roll === 1)
         return -10;
-    if(roll === 1)
+    if(roll === 2)
         return -8;
     if(roll <= 4)
         return -6;

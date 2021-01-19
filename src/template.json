@@ -1,288 +1,333 @@
 {
-  "Actor": {
-      "types": [
-          "threat",
-          "character"
-      ],
-      "templates": {
-          "baseCharacter": {
-              "axioms": {
-                  "magic": {
-                      "min": 1,
-                      "value": 9,
-                      "max": 30
-                  },
-                  "social": {
-                      "min": 1,
-                      "value": 23,
-                      "max": 30
-                  },
-                  "spirit": {
-                      "min": 1,
-                      "value": 10,
-                      "max": 30
-                  },
-                  "tech": {
-                      "min": 1,
-                      "value": 23,
-                      "max": 30
-                  }
-              },
-              "attributes": {
-                  "charisma": {
-                      "min": 0,
-                      "value": 5,
-                      "max": 13
-                  },
-                  "dexterity": {
-                      "min": 0,
-                      "value": 5,
-                      "max": 13
-                  },
-                  "mind": {
-                      "min": 0,
-                      "value": 5,
-                      "max": 13
-                  },
-                  "spirit": {
-                      "min": 0,
-                      "value": 5,
-                      "max": 13
-                  },
-                  "strength": {
-                      "min": 0,
-                      "value": 5,
-                      "max": 13
-                  }
-              },
-              "skills": {
-                  "airVehicles": {
-                      "basedOn": "dexterity",
-                      "adds": 0,
-                      "type": "other"
-                  },
-                  "alteration": {
-                      "basedOn": "mind",
-                      "adds": 0,
-                      "type": "other"
-                  },
-                  "apportation": {
-                      "basedOn": "spirit",
-                      "adds": 0,
-                      "type": "other"
-                  },
-                  "beastRiding": {
-                      "basedOn": "dexterity",
-                      "adds": 0,
-                      "type": "other"
-                  },
-                  "computers": {
-                      "basedOn": "mind",
-                      "adds": 0,
-                      "type": "other"
-                  },
-                  "conjuration": {
-                      "basedOn": "spirit",
-                      "adds": 0,
-                      "type": "other"
-                  },
-                  "divination": {
-                      "basedOn": "mind",
-                      "adds": 0,
-                      "type": "other"
-                  },
-                  "dodge": {
-                      "basedOn": "dexterity",
-                      "adds": 0,
-                      "type": "combat"
-                  },
-                  "energyWeapons": {
-                      "basedOn": "dexterity",
-                      "adds": 0,
-                      "type": "combat"
-                  },
-                  "evidenceAnalysis": {
-                      "basedOn": "mind",
-                      "adds": 0,
-                      "type": "other"
-                  },
-                  "faith": {
-                      "basedOn": "spirit",
-                      "adds": 0,
-                      "type": "other"
-                  },
-                  "find": {
-                      "basedOn": "mind",
-                      "adds": 0,
-                      "type": "other"
-                  },
-                  "fireCombat": {
-                      "basedOn": "dexterity",
-                      "adds": 0,
-                      "type": "combat"
-                  },
-                  "firstAid": {
-                      "basedOn": "mind",
-                      "adds": 0,
-                      "type": "other"
-                  },
-                  "heavyWeapons": {
-                      "basedOn": "dexterity",
-                      "adds": 0,
-                      "type": "combat"
-                  },
-                  "intimidation": {
-                      "basedOn": "spirit",
-                      "adds": 0,
-                      "type": "interaction"
-                  },
-                  "kinesis": {
-                      "basedOn": "spirit",
-                      "adds": 0,
-                      "type": "other"
-                  },
-                  "landVehicles": {
-                      "basedOn": "dexterity",
-                      "adds": 0,
-                      "type": "other"
-                  },
-                  "language": {
-                      "basedOn": "mind",
-                      "adds": 0,
-                      "type": "other"
-                  },
-                  "lockpicking": {
-                      "basedOn": "dexterity",
-                      "adds": 0
-                  },
-                  "maneuver": {
-                      "basedOn": "dexterity",
-                      "adds": 0,
-                      "type": "interaction"
-                  },
-                  "medicine": {
-                      "basedOn": "mind",
-                      "adds": 0,
-                      "type": "other"
-                  },
-                  "meleeWeapons": {
-                      "basedOn": "dexterity",
-                      "adds": 0,
-                      "type": "combat"
-                  },
-                  "missileWeapons": {
-                      "basedOn": "dexterity",
-                      "adds": 0,
-                      "type": "combat"
-                  },
-                  "persuasion": {
-                      "basedOn": "charisma",
-                      "adds": 0,
-                      "type": "other"
-                  },
-                  "precognition": {
-                      "basedOn": "mind",
-                      "adds": 0,
-                      "type": "other"
-                  },
-                  "profession": {
-                      "basedOn": "mind",
-                      "adds": 0,
-                      "type": "other"
-                  },
-                  "reality": {
-                      "basedOn": "spirit",
-                      "adds": 0,
-                      "type": "other"
-                  },
-                  "scholar": {
-                      "basedOn": "mind",
-                      "adds": 0,
-                      "type": "other"
-                  },
-                  "science": {
-                      "basedOn": "mind",
-                      "adds": 0,
-                      "type": "other"
-                  },
-                  "stealth": {
-                      "basedOn": "dexterity",
-                      "adds": 0,
-                      "type": "other"
-                  },
-                  "streetwise": {
-                      "basedOn": "charisma",
-                      "adds": 0,
-                      "type": "other"
-                  },
-                  "survival": {
-                      "basedOn": "mind",
-                      "adds": 0,
-                      "type": "other"
-                  },
-                  "taunt": {
-                      "basedOn": "charisma",
-                      "adds": 0,
-                      "type": "interaction"
-                  },
-                  "telepathy": {
-                      "basedOn": "charisma",
-                      "adds": 0,
-                      "type": "other"
-                  },
-                  "tracking": {
-                      "basedOn": "mind",
-                      "adds": 0,
-                      "type": "other"
-                  },
-                  "trick": {
-                      "basedOn": "mind",
-                      "adds": 0,
-                      "type": "interaction"
-                  },
-                  "unarmedCombat": {
-                      "basedOn": "dexterity",
-                      "adds": 0,
-                      "type": "combat"
-                  },
-                  "waterVehicles": {
-                      "basedOn": "dexterity",
-                      "adds": 0,
-                      "type": "other"
-                  },
-                  "willpower": {
-                      "basedOn": "spirit",
-                      "adds": 0,
-                      "type": "other"
-                  }
-              },
-              "shock": {
-                  "min": 0,
-                  "value": 5,
-                  "max": 5
-              },
-              "wounds": {
-                  "min": 0,
-                  "value": 5,
-                  "max": 5
-              },
-              "possibilities": {
-                  "min": 0,
-                  "value": 3,
-                  "max": 3
-              }
-          }
-      },
-      "threat": {
-          "templates": [
-              "baseCharacter"
-          ]
-      },
-      "character": {
-          "templates": [
-              "baseCharacter"
-          ]
-      }
-  },
-  "Item": {}
+    "Actor": {
+        "types": [
+            "threat",
+            "character"
+        ],
+        "templates": {
+            "baseCharacter": {
+                "axioms": {
+                    "magic": {
+                        "min": 1,
+                        "value": 9,
+                        "max": 30
+                    },
+                    "social": {
+                        "min": 1,
+                        "value": 23,
+                        "max": 30
+                    },
+                    "spirit": {
+                        "min": 1,
+                        "value": 10,
+                        "max": 30
+                    },
+                    "tech": {
+                        "min": 1,
+                        "value": 23,
+                        "max": 30
+                    }
+                },
+                "attributes": {
+                    "charisma": {
+                        "min": 0,
+                        "label": "torg.charisma",
+                        "value": 5,
+                        "max": 13
+                    },
+                    "dexterity": {
+                        "min": 0,
+                        "label": "torg.dexterity",
+                        "value": 5,
+                        "max": 13
+                    },
+                    "mind": {
+                        "min": 0,
+                        "label": "torg.mind",
+                        "value": 5,
+                        "max": 13
+                    },
+                    "spirit": {
+                        "min": 0,
+                        "label": "torg.spirit",
+                        "value": 5,
+                        "max": 13
+                    },
+                    "strength": {
+                        "min": 0,
+                        "label": "torg.strength",
+                        "value": 5,
+                        "max": 13
+                    }
+                },
+                "skills": {
+                    "airVehicles": {
+                        "basedOn": "dexterity",
+                        "label": "torg.airVehicles",
+                        "adds": 0,
+                        "type": "other"
+                    },
+                    "alteration": {
+                        "basedOn": "mind",
+                        "label": "torg.alteration",
+                        "adds": 0,
+                        "type": "other"
+                    },
+                    "apportation": {
+                        "basedOn": "spirit",
+                        "label": "torg.apportation",
+                        "adds": 0,
+                        "type": "other"
+                    },
+                    "beastRiding": {
+                        "basedOn": "dexterity",
+                        "label": "torg.beastRiding",
+                        "adds": 0,
+                        "type": "other"
+                    },
+                    "computers": {
+                        "basedOn": "mind",
+                        "label": "torg.computers",
+                        "adds": 0,
+                        "type": "other"
+                    },
+                    "conjuration": {
+                        "basedOn": "spirit",
+                        "label": "torg.conjuration",
+                        "adds": 0,
+                        "type": "other"
+                    },
+                    "divination": {
+                        "basedOn": "mind",
+                        "label": "torg.divination",
+                        "adds": 0,
+                        "type": "other"
+                    },
+                    "dodge": {
+                        "basedOn": "dexterity",
+                        "label": "torg.dodge",
+                        "adds": 0,
+                        "type": "combat"
+                    },
+                    "energyWeapons": {
+                        "basedOn": "dexterity",
+                        "label": "torg.energyWeapons",
+                        "adds": 0,
+                        "type": "combat"
+                    },
+                    "evidenceAnalysis": {
+                        "basedOn": "mind",
+                        "label": "torg.evidenceAnalysis",
+                        "adds": 0,
+                        "type": "other"
+                    },
+                    "faith": {
+                        "basedOn": "spirit",
+                        "label": "torg.faith",
+                        "adds": 0,
+                        "type": "other"
+                    },
+                    "find": {
+                        "basedOn": "mind",
+                        "label": "torg.find",
+                        "adds": 0,
+                        "type": "other"
+                    },
+                    "fireCombat": {
+                        "basedOn": "dexterity",
+                        "label": "torg.fireCombat",
+                        "adds": 0,
+                        "type": "combat"
+                    },
+                    "firstAid": {
+                        "basedOn": "mind",
+                        "label": "torg.firstAid",
+                        "adds": 0,
+                        "type": "other"
+                    },
+                    "heavyWeapons": {
+                        "basedOn": "dexterity",
+                        "label": "torg.heavyWeapons",
+                        "adds": 0,
+                        "type": "combat"
+                    },
+                    "intimidation": {
+                        "basedOn": "spirit",
+                        "label": "torg.intimidation",
+                        "adds": 0,
+                        "type": "interaction"
+                    },
+                    "kinesis": {
+                        "basedOn": "spirit",
+                        "label": "torg.kinesis",
+                        "adds": 0,
+                        "type": "other"
+                    },
+                    "landVehicles": {
+                        "basedOn": "dexterity",
+                        "label": "torg.landVehicles",
+                        "adds": 0,
+                        "type": "other"
+                    },
+                    "language": {
+                        "basedOn": "mind",
+                        "label": "torg.language",
+                        "adds": 0,
+                        "type": "other"
+                    },
+                    "lockpicking": {
+                        "basedOn": "dexterity",
+                        "label": "torg.lockpicking",
+                        "adds": 0
+                    },
+                    "maneuver": {
+                        "basedOn": "dexterity",
+                        "label": "torg.maneuver",
+                        "adds": 0,
+                        "type": "interaction"
+                    },
+                    "medicine": {
+                        "basedOn": "mind",
+                        "label": "torg.medicine",
+                        "adds": 0,
+                        "type": "other"
+                    },
+                    "meleeWeapons": {
+                        "basedOn": "dexterity",
+                        "label": "torg.meleeWeapons",
+                        "adds": 0,
+                        "type": "combat"
+                    },
+                    "missileWeapons": {
+                        "basedOn": "dexterity",
+                        "label": "torg.missileWeapons",
+                        "adds": 0,
+                        "type": "combat"
+                    },
+                    "persuasion": {
+                        "basedOn": "charisma",
+                        "label": "torg.persuasion",
+                        "adds": 0,
+                        "type": "other"
+                    },
+                    "precognition": {
+                        "basedOn": "mind",
+                        "label": "torg.precognition",
+                        "adds": 0,
+                        "type": "other"
+                    },
+                    "profession": {
+                        "basedOn": "mind",
+                        "label": "torg.profession",
+                        "adds": 0,
+                        "type": "other"
+                    },
+                    "reality": {
+                        "basedOn": "spirit",
+                        "label": "torg.reality",
+                        "adds": 0,
+                        "type": "other"
+                    },
+                    "scholar": {
+                        "basedOn": "mind",
+                        "label": "torg.scholar",
+                        "adds": 0,
+                        "type": "other"
+                    },
+                    "science": {
+                        "basedOn": "mind",
+                        "label": "torg.science",
+                        "adds": 0,
+                        "type": "other"
+                    },
+                    "stealth": {
+                        "basedOn": "dexterity",
+                        "label": "torg.stealth",
+                        "adds": 0,
+                        "type": "other"
+                    },
+                    "streetwise": {
+                        "basedOn": "charisma",
+                        "label": "torg.streetwise",
+                        "adds": 0,
+                        "type": "other"
+                    },
+                    "survival": {
+                        "basedOn": "mind",
+                        "label": "torg.survival",
+                        "adds": 0,
+                        "type": "other"
+                    },
+                    "taunt": {
+                        "basedOn": "charisma",
+                        "label": "torg.taunt",
+                        "adds": 0,
+                        "type": "interaction"
+                    },
+                    "telepathy": {
+                        "basedOn": "charisma",
+                        "label": "torg.telepathy",
+                        "adds": 0,
+                        "type": "other"
+                    },
+                    "tracking": {
+                        "basedOn": "mind",
+                        "label": "torg.tracking",
+                        "adds": 0,
+                        "type": "other"
+                    },
+                    "trick": {
+                        "basedOn": "mind",
+                        "label": "torg.trick",
+                        "adds": 0,
+                        "type": "interaction"
+                    },
+                    "unarmedCombat": {
+                        "basedOn": "dexterity",
+                        "label": "torg.unarmedCombat",
+                        "adds": 0,
+                        "type": "combat"
+                    },
+                    "waterVehicles": {
+                        "basedOn": "dexterity",
+                        "label": "torg.waterVehicles",
+                        "adds": 0,
+                        "type": "other"
+                    },
+                    "willpower": {
+                        "basedOn": "spirit",
+                        "label": "torg.willpower",
+                        "adds": 0,
+                        "type": "other"
+                    }
+                },
+                "shock": {
+                    "min": 0,
+                    "value": 8,
+                    "max": 8
+                },
+                "wounds": {
+                    "min": 0,
+                    "value": 3,
+                    "max": 3
+                },
+                "possibilities": {
+                    "min": 0,
+                    "value": 3,
+                    "max": 3
+                }
+            }
+        },
+        "threat": {
+            "templates": [
+                "baseCharacter"
+            ]
+        },
+        "character": {
+            "templates": [
+                "baseCharacter"
+            ]
+        }
+    },
+    "Item": {}
 }

@@ -12,7 +12,10 @@
         Attributes
         {{> systems/torgeternity/templates/partials/StatblockPartial.hbs stat=data.attributes statName="attributes"}}
     </div>
-    <img src="{{actor.img}}" data-edit="img" title="{{item.name}}" height="128" width="128">
+    <table>
+        <tr><td>
+    <img src="{{actor.img}}" data-edit="img" title="{{item.name}}" style="max-height:128px;">
+        </td><td>
     <table>
         <tr>
             <th></th>
@@ -29,8 +32,14 @@
             <td><input name="data.shock.value" type="text" value="{{data.shock.value}}" data-dtype="Number"/></td>
             <td><input name="data.shock.max" type="text" value="{{data.shock.max}}" data-dtype="Number"/></td>
         </tr>
+        <tr>
+            <td>Possibilities</td>
+            <td><input name="data.possibilities.value" type="text" value="{{data.possibilities.value}}" data-dtype="Number"/></td>
+            <td><input name="data.possibilities.max" type="text" value="{{data.possibilities.max}}" data-dtype="Number"/></td>
+        </tr>
 
     </table>
+    </td></tr></table>
     <table>
         <tr>
             <th>R</th>

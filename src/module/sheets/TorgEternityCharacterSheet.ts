@@ -39,7 +39,12 @@ export default class TorgEternityCharacterSheet extends ActorSheet {
 
 
         new Roll(roll, {bonus:val.value, wounds: penalty})
-            .toMessage({speaker: mergeObject(ChatMessage.getSpeaker(), {actor: this.actor._id})});
+            .toMessage({
+                speaker: ChatMessage.getSpeaker({ actor: this.actor }),
+                flavor: game.i18n.localize(val.label)
+            });
+            
+                //{speaker: mergeObject(ChatMessage.getSpeaker(), {actor: this.actor._id})});
                 /*speaker: {
                   scene: canvas.scene._id,
                   actor: c.actor ? c.actor._id : null,

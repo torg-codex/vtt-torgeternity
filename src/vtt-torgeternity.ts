@@ -31,7 +31,6 @@ Hooks.once('init', async function() {
 	await preloadTemplates();
 
 	// Register custom sheets (if any)
-
     Actors.unregisterSheet("core", ActorSheet);
 	Actors.registerSheet("torgeternity", TorgEternityCharacterSheet, {makeDefault: true});
 	
@@ -42,6 +41,28 @@ Hooks.once('init', async function() {
 	CONFIG.Dice.terms[TorgDie.DENOMINATION] = TorgDie;
 	CONFIG.Dice.types.push(TorgDieUntrained);
 	CONFIG.Dice.terms[TorgDieUntrained.DENOMINATION] = TorgDieUntrained;
+
+	//add status effects
+	CONFIG.statusEffects = CONFIG.statusEffects.concat([{
+		id: "stymied",
+		label: "Stymied",
+		icon: "systems/torgeternity/assets/icons/stymied.webp",
+	  },
+	  {
+		id: "stymied2",
+		label: "Very Stymied",
+		icon: "systems/torgeternity/assets/icons/very_stymied.webp",
+	  },
+	  {
+		id: "vulnerable",
+		label: "Vulnerable",
+		icon: "systems/torgeternity/assets/icons/vulnerable.webp",
+	  },
+	  {
+		id: "vulnerable2",
+		label: "Very Vulnerable",
+		icon: "systems/torgeternity/assets/icons/very_vulnerable.webp",
+	  }]);
 	/*
 	Dice: {
 		types: [Die, FateDie],

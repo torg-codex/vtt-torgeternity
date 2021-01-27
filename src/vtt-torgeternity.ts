@@ -14,7 +14,7 @@
 import { registerSettings } from './module/settings';
 import { preloadTemplates } from './module/preloadTemplates';
 import TorgEternityCharacterSheet from './module/sheets/TorgEternityCharacterSheet'
-import { BonusDie, TorgDie, TorgDieUntrained } from './module/dice';
+import { BonusDie, TorgDie, TorgDieUntrained, TorgDieUp } from './module/dice';
 
 /* ------------------------------------ */
 /* Initialize system					*/
@@ -41,6 +41,19 @@ Hooks.once('init', async function() {
 	CONFIG.Dice.terms[TorgDie.DENOMINATION] = TorgDie;
 	CONFIG.Dice.types.push(TorgDieUntrained);
 	CONFIG.Dice.terms[TorgDieUntrained.DENOMINATION] = TorgDieUntrained;
+	CONFIG.Dice.types.push(TorgDieUp);
+	CONFIG.Dice.terms[TorgDieUp.DENOMINATION] = TorgDieUp;
+	let roll:any = Roll;
+	roll.TOOLTIP_TEMPLATE = "systems/torgeternity/templates/tooltip.hbs";
+
+	// add handlebar helper
+	Handlebars.registerHelper('json', function(context) {
+		return JSON.stringify(context);
+	});
+
+	Handlebars.registerHelper('contains', function(txt:string, search:string) {
+		return txt.includes(search);
+	});
 
 	//add status effects
 	CONFIG.statusEffects = CONFIG.statusEffects.concat([{
@@ -63,22 +76,6 @@ Hooks.once('init', async function() {
 		label: "Very Vulnerable",
 		icon: "systems/torgeternity/assets/icons/very_vulnerable.webp",
 	  }]);
-	/*
-	Dice: {
-		types: [Die, FateDie],
-		rollModes: Object.entries(CONST.DICE_ROLL_MODES).reduce((obj, e) => {
-		  let [k, v] = e;
-		  obj[v] = `CHAT.Roll${k.titleCase()}`;
-		  return obj;
-		}, {}),
-		rolls: [Roll],
-		terms: {
-		  "c": Coin,
-		  "d": Die,
-		  "f": FateDie
-		},
-		randomUniform: MersenneTwister.random
-	  },*/
 });
 
 /* ------------------------------------ */

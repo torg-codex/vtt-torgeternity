@@ -1,71 +1,111 @@
-<form class="{{cssClass}}" autocomplete="off">
-    <header class="shee-header">
-        <h1> 
-            <input name="name" type="text" value="{{actor.name}}" placeholder="Name"/> </h1>
-        </h1>
-    </header>
-    <div>
-        Axioms
-        {{> systems/torgeternity/templates/partials/StatblockPartial.hbs stat=data.axioms statName="axioms"}}
+<form class="{{cssClass}} torg-sheet" autocomplete="off">
+    <div class="grid-15-auto">
+        <img class="logo" src="systems/torgeternity/assets/torg_logo.webp">
+        <div>
+            <div class="grid-8-2">
+                <div class="labeled-input"><label>Name</label> <input name="name" type="text" value="{{actor.name}}" placeholder="Name"/></div>
+                <div class="labeled-input"><label>Total XP</label> <input name="data.xp.total" type="text" value="{{data.xp.total}}" placeholder="0" data-dtype="Number"/></div>
+            </div>
+            <div class="grid-8-2">
+                <div class="grid-5-5">
+                    <div class="labeled-input"><label>Race</label> <input name="data.race" type="text" value="{{data.race}}" placeholder="Human"/></div>
+                    <div class="labeled-input"><label>Cosm</label> <input name="data.cosm" type="text" value="{{data.cosm}}" placeholder="Core Earth"/></div>
+                </div>
+                <div class="labeled-input"><label>Unspent</label> <input name="data.xp.unspent" type="text" value="{{data.xp.unspent}}" placeholder="0" data-dtype="Number"/></div>
+            </div>
+            <div class="grid-7-3">
+                <div class="grid-4">
+                    <div class="labeled-input"><label>Magic</label> <input name="data.axioms.magic.value" type="text" value="{{data.axioms.magic.value}}" placeholder="9" data-dtype="Number"/></div>
+                    <div class="labeled-input"><label>Social</label> <input name="data.axioms.social.value" type="text" value="{{data.axioms.social.value}}" placeholder="23" data-dtype="Number"/></div>
+                    <div class="labeled-input"><label>Spirit</label> <input name="data.axioms.spirit.value" type="text" value="{{data.axioms.spirit.value}}" placeholder="10" data-dtype="Number"/></div>
+                    <div class="labeled-input"><label>Tech</label> <input name="data.axioms.tech.value" type="text" value="{{data.axioms.tech.value}}" placeholder="23" data-dtype="Number"/></div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div>
-        Attributes
-        {{> systems/torgeternity/templates/partials/StatblockPartial.hbs stat=data.attributes statName="attributes"}}
+    <div class="grid-5-5">
+        <div>
+            <h3>Attributes & Skills</h3>
+            <div class="grid-5">
+                <div class="labeled-input-circle"><label>Charisma</label> <input name="data.attributes.charisma.value" type="text" value="{{data.attributes.charisma.value}}" placeholder="7" data-dtype="Number"/></div>
+                <div class="labeled-input-circle"><label>Dexterity</label> <input name="data.attributes.dexterity.value" type="text" value="{{data.attributes.dexterity.value}}" placeholder="7" data-dtype="Number"/></div>
+                <div class="labeled-input-circle"><label>Mind</label> <input name="data.attributes.mind.value" type="text" value="{{data.attributes.mind.value}}" placeholder="7" data-dtype="Number"/></div>
+                <div class="labeled-input-circle"><label>Spirit</label> <input name="data.attributes.spirit.value" type="text" value="{{data.attributes.spirit.value}}" placeholder="7" data-dtype="Number"/></div>
+                <div class="labeled-input-circle"><label>Strength</label> <input name="data.attributes.strength.value" type="text" value="{{data.attributes.strength.value}}" placeholder="7" data-dtype="Number"/></div>
+            </div>
+        </div>
+        <!--<div class="grid-bottom grid-8-2">-->
+            <div class="grid-4">
+                <div class="labeled-input-circle"><label>Movement</label> <input readonly type="text" value="{{data.attributes.dexterity.value}}" placeholder="7" data-dtype="Number"/></div>
+                <div class="labeled-input-circle"><label>Run</label> <input readonly type="text" value="{{data.calc.run}}" placeholder="21" data-dtype="Number"/></div>
+                <div class="labeled-input-circle"><label>Tough</label> <input readonly type="text" value="{{data.attributes.strength.value}}" placeholder="7" data-dtype="Number"/></div>
+                <div class="labeled-input-circle"><label>Armor</label> <input readonly type="text" value="0" placeholder="0" data-dtype="Number"/></div>
+            </div>
+            <!--<div>
+
+            </div>
+        </div>-->
     </div>
-    <table>
-        <tr><td>
-    <img src="{{actor.img}}" data-edit="img" title="{{item.name}}" style="max-height:128px;">
-        </td><td>
-    <table>
-        <tr>
-            <th></th>
-            <th>Current</th>
-            <th>Max</th>
-        </tr>
-        <tr>
-            <td>Wounds</td>
-            <td><input name="data.wounds.value" type="text" value="{{data.wounds.value}}" data-dtype="Number"/></td>
-            <td><input name="data.wounds.max" type="text" value="{{data.wounds.max}}" data-dtype="Number"/></td>
-        </tr>
-        <tr>
-            <td>Shock</td>
-            <td><input name="data.shock.value" type="text" value="{{data.shock.value}}" data-dtype="Number"/></td>
-            <td><input name="data.shock.max" type="text" value="{{data.shock.max}}" data-dtype="Number"/></td>
-        </tr>
-        <tr>
-            <td>Possibilities</td>
-            <td><input name="data.possibilities.value" type="text" value="{{data.possibilities.value}}" data-dtype="Number"/></td>
-            <td><input name="data.possibilities.max" type="text" value="{{data.possibilities.max}}" data-dtype="Number"/></td>
-        </tr>
+    <div class="grid-5-5">
+        <table class="skill-table">
+            <tr>
+                <th>R</th>
+                <th>
+                Combat Skills    
+                </th>
+                <th>Attr</th><th></th><th>Adds</th><th></th><th>Value</th>
+            </tr>
+            {{> systems/torgeternity/templates/sheets/character-sheet-skill.hbs stat=data.skills type="combat"}}
 
-    </table>
-    </td></tr></table>
-    <table>
-        <tr>
-            <th>R</th>
-            <th>
-            Combat Skills    
-            </th>
-            <th>Attr</th><th>Adds</th><th>Value</th>
-        </tr>
-        {{> systems/torgeternity/templates/partials/StatblockPartialVertical.hbs stat=data.skills type="combat"}}
+            <tr>
+                <th>R</th>
+                <th>
+                Interaction Skills    
+                </th>
+                <th>Attr</th><th></th><th>Adds</th><th></th><th>Value</th>
+            </tr>
+            {{> systems/torgeternity/templates/sheets/character-sheet-skill.hbs stat=data.skills type="interaction"}}
 
-        <tr>
-            <th>R</th>
-            <th>
-            Interaction Skills    
-            </th>
-            <th>Attr</th><th>Adds</th><th>Value</th>
-        </tr>
-        {{> systems/torgeternity/templates/partials/StatblockPartialVertical.hbs stat=data.skills type="interaction"}}
+            <tr>
+                <th>R</th>
+                <th>
+                Other Skills    
+                </th>
+                <th>Attr</th><th></th><th>Adds</th><th></th><th>Value</th>
+            </tr>
+            {{> systems/torgeternity/templates/sheets/character-sheet-skill.hbs stat=data.skills type="other"}}
+        </table>
 
-        <tr>
-            <th>R</th>
-            <th>
-            Other Skills    
-            </th>
-            <th>Attr</th><th>Adds</th><th>Value</th>
-        </tr>
-        {{> systems/torgeternity/templates/partials/StatblockPartialVertical.hbs stat=data.skills type="other"}}
-    </table>
+        <div>
+            <div class="grid-5-5" style="padding:0.5em 0;">
+                <div>
+                    <img src="{{actor.img}}" data-edit="img" title="{{actor.name}}" style="width:100%;">
+                </div>
+                <div>
+                    <strong>Wounds</strong>
+                    <div class="grid-5-1-5">
+                        <input name="data.wounds.value" type="text" value="{{data.wounds.value}}" data-dtype="Number"/>
+                        /
+                        <input name="data.wounds.max" type="text" value="{{data.wounds.max}}" data-dtype="Number"/>
+                    </div>
+                    <strong>Shock</strong>
+                    <div class="grid-5-1-5">
+                        <input name="data.shock.value" type="text" value="{{data.shock.value}}" data-dtype="Number"/>
+                        /
+                        <input name="data.shock.max" type="text" value="{{data.shock.max}}" data-dtype="Number"/>
+                    </div>
+                    <strong>Possibilities</strong>
+                    <div class="grid-5-1-5">
+                        <input name="data.possibilities.value" type="text" value="{{data.possibilities.value}}" data-dtype="Number"/>
+                        /
+                        <input name="data.possibilities.max" type="text" value="{{data.possibilities.max}}" data-dtype="Number"/>
+                    </div>
+                </div>
+            </div>
+            Notes:
+            <div class="notes">
+                {{editor content=data.notes target="data.notes" button=true owner=owner editable=editable}}
+            </div>
+        </div>
+    </div> 
 </form>

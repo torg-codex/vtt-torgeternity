@@ -1,3 +1,5 @@
+$black: #1a1a1a;
+
 .roll.bonusdie.exploded {
     color: #18520b;
     filter: sepia(0.5) hue-rotate(60deg);
@@ -5,4 +7,119 @@
 
 .iconButton {
     height: 1.8em;
+}
+
+.tootip-button {
+    width: 2em;
+    height: 24px;
+    text-align: center;
+    font-size: 16px;
+    line-height: 24px;
+    padding: 0;
+    float: left;
+}
+
+.torg-sheet {
+    .logo {
+        border: 0;
+    }
+
+    .notes {
+        height: 200px;
+    }
+
+    .editor {
+        height: 100%;
+    }
+
+    .grid-15-auto {
+        display: grid;
+        grid-template-columns:15em auto;
+        column-gap: 1em;
+    }
+
+    .grid-bottom {
+        align-self: end;
+    }
+
+    input {
+        border: 0;
+        background: transparent;
+        border-bottom: 1px solid black;
+    }
+
+    .skill-table {
+        th {
+            background-color: $black;
+            color: white;
+        }
+
+        .center {
+            text-align: center;
+        }
+
+        .right {
+            text-align: right;
+        }
+
+        input {
+            width: 3em;
+            text-align: right;
+        }
+    }
+
+    .labeled-input {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        grid-gap: 10px;
+
+        label {
+            font-weight: bold;
+            align-self: center;
+        }
+
+        input {
+            align-self: center;
+        }
+    }
+
+    .labeled-input-circle {
+        @extend .grid-bottom;
+
+        label {
+            display: block;
+            width: 100%;
+            text-align: center;
+            font-weight: bold;
+        }
+        input {
+            border-radius: 50%;
+            width: 3em;
+            height: 3em;
+            text-align: center;
+            border: 3px solid $black;
+            margin: 0 auto;
+            display: block;
+        }
+    }
+
+    @for $i from 1 through 9 {
+        .grid-#{$i}-#{10-$i} {
+            display: grid;
+            grid-template-columns:$i*1fr (10-$i)*1fr;
+            column-gap: 0.5em;
+        }
+
+        .grid-#{$i}-1-#{10-$i} {
+            display: grid;
+            grid-template-columns:$i*1fr 1fr (10-$i)*1fr;
+            column-gap: 0.5em;
+        }
+
+        .grid-#{$i} {
+            display: grid;
+            grid-template-columns: repeat($i, 1fr);
+            column-gap: 0.5em;
+        }
+    }
 }

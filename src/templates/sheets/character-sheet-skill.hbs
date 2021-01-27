@@ -1,0 +1,13 @@
+{{#each stat}}{{#if (eq this.type ../type)}}
+<tr>
+    <td class="center"><a class="roll" data-rollTarget="skills.{{@key}}"><img src="icons/svg/d20.svg" class="iconButton"></a></td>
+    <td>{{localize this.label}}</td>
+    <td class="center">{{this.attribute}}</td>
+    <td>+</td>
+    <td class="center">
+        <input name="data.skills.{{@key}}.adds" type="text" value="{{this.adds}}" data-dtype="Number"/>
+    </td>
+    <td><strong>=</strong></td>
+    <td class="center"><strong>{{this.value}}</strong></td>
+</tr>
+{{/if}}{{/each}}

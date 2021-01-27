@@ -5,8 +5,9 @@ export default class TorgEternityCharacterSheet extends ActorSheet {
 
     getData() {
         const data = super.getData();
-        const skills = data.data["skills"];
-        const attributes = data.data["attributes"];
+        const torgData:any = data.data;
+        const skills = torgData.skills;
+        const attributes = torgData.attributes;
         //RollTableDirectory.collection.forEa
 
         Object.keys(skills).forEach(function(key){
@@ -15,6 +16,14 @@ export default class TorgEternityCharacterSheet extends ActorSheet {
             skills[key].attribute = baseAttributeValue;
             skills[key].value = skills[key].adds + baseAttributeValue;
         });
+
+        if(torgData.notes === null)
+            torgData.notes = "";
+
+        torgData.calc = {
+            run: 3*torgData.attributes.dexterity.value
+        }
+        
         return data;
     }
 

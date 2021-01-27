@@ -178,7 +178,8 @@
                     "lockpicking": {
                         "basedOn": "dexterity",
                         "label": "torg.lockpicking",
-                        "adds": 0
+                        "adds": 0,
+                        "type": "other"
                     },
                     "maneuver": {
                         "basedOn": "dexterity",
@@ -315,7 +316,8 @@
                     "min": 0,
                     "value": 3,
                     "max": 3
-                }
+                },
+                "notes": ""
             }
         },
         "threat": {

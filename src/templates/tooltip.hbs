@@ -1,0 +1,22 @@
+<div class="dice-tooltip">
+    {{#each parts}}
+    <section class="tooltip-part">
+        <div class="dice">
+            <header class="part-header flexrow">
+                <span class="part-formula">{{this.formula}}</span>
+                {{#if this.flavor}}<span class="part-flavor">{{this.flavor}}</span>{{/if}}
+                <span class="part-total">{{this.total}}</span>
+            </header>
+            <ol class="dice-rolls">
+            {{#each this.rolls}}
+                <li class="roll {{this.classes}}">{{{this.result}}}</li>
+            {{/each}}
+            {{#each this.rolls}}{{#if @first}}{{#if (contains this.classes 'torgdie')}}
+                <li><button class="tootip-button" onclick='CONFIG.Dice.terms["e"].addTo(this, {{{json this/..}}}, false)'>Up</button></li>
+                <li><button class="tootip-button" onclick='CONFIG.Dice.terms["e"].addTo(this, {{{json this/..}}}, true)'>P</button></li>
+            {{/if}}{{/if}}{{/each}}
+            </ol>
+        </div>
+    </section>
+    {{/each}}
+</div>

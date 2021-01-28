@@ -8,8 +8,13 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - name: Get Version
+        id: version
+        run: echo ::set-output name=TAG::${GITHUB_REF#refs/tags/}
       - name: Print Version
-        run: echo $GITHUB_REF
+        run: echo ${{ steps.version.outputs.TAG }}
+      - name: Install Gulp
+        run: npm install gulp
       - name: Build
         run: gulp build
       - name: Zip Files
@@ -20,7 +25,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          upload_url: https://github.com/torg-codex/vtt-torgeternity/releases/tag/$GITHUB_REF
+          upload_url: https://github.com/torg-codex/vtt-torgeternity/releases/tag/${{ steps.version.outputs.TAG }}
           asset_path: ./release.zip
           asset_name: release.zip
           asset_content_type: application/zip
@@ -29,7 +34,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          upload_url: https://github.com/torg-codex/vtt-torgeternity/releases/tag/$GITHUB_REF
+          upload_url: https://github.com/torg-codex/vtt-torgeternity/releases/tag/${{ steps.version.outputs.TAG }}
           asset_path: ./dist/system.json
           asset_name: system.json
           asset_content_type: application/json

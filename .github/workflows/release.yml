@@ -8,8 +8,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Print Version
-        run: echo ${{ steps.version.outputs.TAG }}
+      - name: Checkout
+        uses: actions/checkout@v1
       - name: Install Gulp
         run: |
           npm install gulp-cli

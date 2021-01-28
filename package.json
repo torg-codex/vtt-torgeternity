@@ -17,7 +17,7 @@
     "chalk": "^4.1.0",
     "foundry-pc-types": "github:kmoschcau/foundry-vtt-types",
     "foundry-vtt-types": "github:kmoschcau/foundry-vtt-types",
-    "fs-extra": "^9.0.1",
+    "fs-extra": "^9.1.0",
     "gulp": "^4.0.2",
     "gulp-git": "^2.10.1",
     "gulp-less": "^4.0.1",

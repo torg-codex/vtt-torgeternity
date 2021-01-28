@@ -8,6 +8,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout
+        uses: actions/checkout@v2
       - name: Get Version
         id: version
         run: |
@@ -15,7 +17,7 @@ jobs:
           echo ${{ steps.version.outputs.TAG }}
       - name: Install Gulp
         run: |
-          npm install --global gulp-cli
+          npm install gulp-cli
           gulp -v
       - name: Build
         run: gulp build

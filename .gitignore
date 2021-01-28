@@ -1,3 +1,5 @@
 node_modules
 foundryconfig.json
 dist
+desktop.ini
+.vsls.json

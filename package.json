@@ -13,7 +13,7 @@
   "author": "",
   "license": "",
   "devDependencies": {
-    "archiver": "^5.1.0",
+    "archiver": "^5.2.0",
     "chalk": "^4.1.0",
     "foundry-pc-types": "github:kmoschcau/foundry-vtt-types",
     "foundry-vtt-types": "github:kmoschcau/foundry-vtt-types",

@@ -21,21 +21,31 @@ jobs:
           gulp -v
       - name: Build
         run: gulp build package
-      - name: Github Release
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.ref }}
+          release_name: ${{ steps.version.outputs.TAG }}
+          draft: false
+          prerelease: false
+      - name: Upload release.zip
         uses:  actions/upload-release-asset@v1.0.2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          upload_url: https://github.com/torg-codex/vtt-torgeternity/releases/tag/${{ steps.version.outputs.TAG }}
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: ./package/release.zip
           asset_name: release.zip
           asset_content_type: application/zip
-      - name: Github Release
+      - name: Upload system.json
         uses:  actions/upload-release-asset@v1.0.2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          upload_url: https://github.com/torg-codex/vtt-torgeternity/releases/tag/${{ steps.version.outputs.TAG }}
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: ./dist/system.json
           asset_name: system.json
           asset_content_type: application/json

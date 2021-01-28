@@ -10,11 +10,13 @@ jobs:
     steps:
       - name: Get Version
         id: version
-        run: echo ::set-output name=TAG::${GITHUB_REF#refs/tags/}
-      - name: Print Version
-        run: echo ${{ steps.version.outputs.TAG }}
+        run: |
+          echo ::set-output name=TAG::${GITHUB_REF#refs/tags/}
+          echo ${{ steps.version.outputs.TAG }}
       - name: Install Gulp
-        run: npm install gulp
+        run: |
+          npm install --global gulp-cli
+          gulp -v
       - name: Build
         run: gulp build
       - name: Zip Files

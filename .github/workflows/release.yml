@@ -1,18 +1,13 @@
 name: Release
-
-on: 
-  release:
-    types: [published]
+on:
+  push:
+    tags:
+      - v*
 
 jobs: 
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-      - name: Get Version
-        id: version
-        run: echo ::set-output name=TAG::${GITHUB_REF#refs/tags/}
       - name: Print Version
         run: echo ${{ steps.version.outputs.TAG }}
       - name: Install Gulp
@@ -28,7 +23,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           tag_name: ${{ github.ref }}
-          release_name: ${{ steps.version.outputs.TAG }}
+          release_name: ${{ github.ref }}
           draft: false
           prerelease: false
       - name: Upload release.zip

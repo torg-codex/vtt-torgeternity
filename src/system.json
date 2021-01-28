@@ -12,7 +12,7 @@
     {
       "name": "Martin",
       "email": "martintaraz@users.noreply.github.com"
-    },
+    }
   ],
   "scripts": [],
   "esmodules": [
@@ -42,11 +42,11 @@
   "media": [
     {
       "type": "cover",
-      "https://raw.githubusercontent.com/torg-codex/vtt-torgeternity/master/src/assets/torg_logo.webp"
+      "url": "https://raw.githubusercontent.com/torg-codex/vtt-torgeternity/master/src/assets/torg_logo.webp"
     },
     {
       "type": "icon",
-      "https://raw.githubusercontent.com/torg-codex/vtt-torgeternity/master/src/assets/torg_logo.webp"
+      "url": "https://raw.githubusercontent.com/torg-codex/vtt-torgeternity/master/src/assets/torg_logo.webp"
     }
   ]
 }

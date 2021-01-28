@@ -21,20 +21,13 @@ jobs:
           gulp -v
       - name: Build
         run: gulp build
-      - name: ls
-        run: |
-          ls
-          ls dist
-      - name: Zip Files
-        working-directory: ./dist
-        run: zip -r ../release.zip
       - name: Github Release
         uses:  actions/upload-release-asset@v1.0.2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: https://github.com/torg-codex/vtt-torgeternity/releases/tag/${{ steps.version.outputs.TAG }}
-          asset_path: ./release.zip
+          asset_path: ./package/release.zip
           asset_name: release.zip
           asset_content_type: application/zip
       - name: Github Release

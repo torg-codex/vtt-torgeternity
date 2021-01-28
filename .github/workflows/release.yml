@@ -1,0 +1,36 @@
+name: Release
+
+on: 
+  release:
+    types: [published]
+
+jobs: 
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print Version
+        run: echo $GITHUB_REF
+      - name: Build
+        run: gulp build
+      - name: Zip Files
+        working-directory: ./dist
+        run: zip -r ../release.zip
+      - name: Github Release
+        uses:  actions/upload-release-asset@v1.0.2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: https://github.com/torg-codex/vtt-torgeternity/releases/tag/$GITHUB_REF
+          asset_path: ./release.zip
+          asset_name: release.zip
+          asset_content_type: application/zip
+      - name: Github Release
+        uses:  actions/upload-release-asset@v1.0.2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: https://github.com/torg-codex/vtt-torgeternity/releases/tag/$GITHUB_REF
+          asset_path: ./dist/system.json
+          asset_name: system.json
+          asset_content_type: application/json
+        

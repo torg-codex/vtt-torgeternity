@@ -20,7 +20,7 @@ jobs:
           npm install gulp-cli
           gulp -v
       - name: Build
-        run: gulp build
+        run: gulp build package
       - name: Github Release
         uses:  actions/upload-release-asset@v1.0.2
         env:

@@ -1,15 +1,18 @@
 {
   "name": "torgeternity",
   "title": "Torg Eternity",
-  "description": "",
-  "version": "0.1.0",
-  "author": "",
+  "description": "A still very simple implementation of the Torg Eternity system. For now it only handles Character Sheets and Dice Rolls. For card management use another module.",
+  "version": "0.1.1",
+  "author": "Martin, Manuel",
   "authors": [
     {
-      "name": "",
-      "email": "",
-      "url": ""
-    }
+      "name": "Manuel",
+      "email": "manuel-hegner@users.noreply.github.com"
+    },
+    {
+      "name": "Martin",
+      "email": "martintaraz@users.noreply.github.com"
+    },
   ],
   "scripts": [],
   "esmodules": [
@@ -32,11 +35,18 @@
   "secondaryTokenAttribute": "shock",
   "minimumCoreVersion": "0.5.0",
   "compatibleCoreVersion": "0.5.0",
-  "url": "",
-  "manifest": "",
-  "download": "",
-  "license": "",
-  "readme": "",
-  "bugs": "",
-  "changelog": ""
+  "url": "https://github.com/torg-codex/vtt-torgeternity",
+  "manifest": "https://raw.githubusercontent.com/torg-codex/vtt-torgeternity/master/src/system.json",
+  "download": "https://github.com/torg-codex/vtt-torgeternity/releases/download/latest/release.zip",
+  "manifestPlusVersion": "1.0.0",
+  "media": [
+    {
+      "type": "cover",
+      "https://raw.githubusercontent.com/torg-codex/vtt-torgeternity/master/src/assets/torg_logo.webp"
+    },
+    {
+      "type": "icon",
+      "https://raw.githubusercontent.com/torg-codex/vtt-torgeternity/master/src/assets/torg_logo.webp"
+    }
+  ]
 }

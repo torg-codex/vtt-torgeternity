@@ -3,7 +3,7 @@
         <img class="logo" src="systems/torgeternity/assets/torg_logo.webp">
         <div>
             <div class="grid-8-2">
-                <div class="labeled-input"><label>Name</label> <input name="name" type="text" value="{{actor.name}}" placeholder="Name"/></div>
+                <div class="labeled-input"><label>Name</label> <input name="actor.name" type="text" value="{{actor.name}}" placeholder="Name"/></div>
                 <div class="labeled-input"><label>Total XP</label> <input name="data.xp.total" type="text" value="{{data.xp.total}}" placeholder="0" data-dtype="Number"/></div>
             </div>
             <div class="grid-8-2">
@@ -38,8 +38,8 @@
             <div class="grid-4">
                 <div class="labeled-input-circle"><label>Movement</label> <input readonly type="text" value="{{data.attributes.dexterity.value}}" placeholder="7" data-dtype="Number"/></div>
                 <div class="labeled-input-circle"><label>Run</label> <input readonly type="text" value="{{data.calc.run}}" placeholder="21" data-dtype="Number"/></div>
-                <div class="labeled-input-circle"><label>Tough</label> <input readonly type="text" value="{{data.attributes.strength.value}}" placeholder="7" data-dtype="Number"/></div>
-                <div class="labeled-input-circle"><label>Armor</label> <input readonly type="text" value="0" placeholder="0" data-dtype="Number"/></div>
+                <div class="labeled-input-circle"><label>Tough</label> <input readonly type="text" value="{{data.calc.totalToughness}}" placeholder="7" data-dtype="Number"/></div>
+                <div class="labeled-input-circle"><label>Armor</label> <input type="text" name="data.armor" value="{{data.armor}}" placeholder="0" data-dtype="Number"/></div>
             </div>
             <!--<div>
 
@@ -79,7 +79,7 @@
         <div>
             <div class="grid-5-5" style="padding:0.5em 0;">
                 <div>
-                    <img src="{{actor.img}}" data-edit="img" title="{{actor.name}}" style="width:100%;">
+                    <img src="{{img}}" data-edit="img" title="{{actor.name}}" style="width:100%;">
                 </div>
                 <div>
                     <strong>Wounds</strong>

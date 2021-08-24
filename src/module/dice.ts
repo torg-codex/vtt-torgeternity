@@ -1,6 +1,6 @@
 export class BonusDie extends Die {
     constructor(termData) {
-        super({number: termData.number, faces: 6, modifiers: termData.modifiers, options: termData.options});
+        super(Object.assign({}, termData, {faces: 6}));
     }
 
     static DENOMINATION = "b";
@@ -19,7 +19,7 @@ export class BonusDie extends Die {
 
 export class TorgDie extends Die {
     constructor(termData) {
-        super({number: termData.number, faces: 20, modifiers: termData.modifiers, options: termData.options});
+        super(Object.assign({}, termData, {faces: 20}));
     }
 
     static DENOMINATION = "t";
@@ -41,7 +41,7 @@ export class TorgDie extends Die {
 
 export class TorgDieUntrained extends Die {
     constructor(termData) {
-        super({number: termData.number, faces: 20, modifiers: termData.modifiers, options: termData.options});
+        super(Object.assign({}, termData, {faces: 20}));
     }
 
     static DENOMINATION = "tu";
@@ -63,7 +63,7 @@ export class TorgDieUntrained extends Die {
 
 export class TorgDieUp extends Die {
     constructor(termData) {
-        super({number: termData.number, faces: 20, modifiers: termData.modifiers, options: termData.options});
+        super(Object.assign({}, termData, {faces: 20}));
     }
 
     static DENOMINATION = "e";
